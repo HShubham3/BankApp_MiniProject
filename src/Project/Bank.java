@@ -8,7 +8,7 @@ public class Bank {
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to The Bank");
-	System.out.println("*********************");
+	    System.out.println("*********************");
 		
 		System.out.println("Enter the new account number to created: ");
 		long anum=sc.nextLong();
