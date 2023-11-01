@@ -12,6 +12,7 @@ public class Bank {
 		
 		System.out.println("Enter the new account number to created: ");
 		long anum=sc.nextLong();
+		sc.nextLine();
 		System.out.println("Enter the name: ");
 		String name=sc.next();
 		BankAccDTO b = new BankAccDTO(anum,name);
