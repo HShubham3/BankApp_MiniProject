@@ -21,14 +21,14 @@ public class Bank {
 		
 		boolean status=bi.validate(b);
 		
-		int ch=0;
+		int option=0;
 		
 		while(status) {
-			while(ch<=4 && status==true) {
+			while(option<=4 && status==true) {
 				bi.choice();
-				ch = sc.nextInt();
+				option = sc.nextInt();
 				 
-				switch(ch) {
+				switch(option) {
 				
 				case 1: bi.deposit(b);
 					break;
@@ -39,22 +39,23 @@ public class Bank {
 				case 3: bi.checkBal(b);
 					break;
 					
-				case 4: bi.updatePin(b);
+					
+				case 4: status= bi.updatePin(b);
 					break;
 				 
-				}//switch
+				}
 				
-			}//inner while
+			}
 			
 			break;
 			
-		}//outer while
+		}
 		
 		if(!status) {
 			System.out.println("Contact the bank");
 		}
 		
 		System.out.println("=*=*=*=*=*=Thank You! Visit again*=*=*=*=*=");
-	}//main
+	}
 
-}//Bank
+}
