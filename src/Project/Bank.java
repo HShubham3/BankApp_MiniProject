@@ -9,8 +9,7 @@ public class Bank {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to The Bank");
 	    System.out.println("*********************");
-		
-		System.out.println("Enter the new account number to created: ");
+		System.out.println("Enter the account number: ");
 		long anum=sc.nextLong();
 		sc.nextLine();
 		System.out.println("Enter the name: ");
@@ -39,22 +38,18 @@ public class Bank {
 				case 3: bi.checkBal(b);
 					break;
 					
-					
-				case 4: status= bi.updatePin(b);
+				case 4: status = bi.updatePin(b);
 					break;
 				 
 				}
-				
 			}
-			
-			break;
-			
+			break;	
 		}
 		
 		if(!status) {
 			System.out.println("Contact the bank");
 		}
-		
+		sc.close();
 		System.out.println("=*=*=*=*=*=Thank You! Visit again*=*=*=*=*=");
 	}
 

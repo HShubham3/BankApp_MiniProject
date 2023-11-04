@@ -82,6 +82,7 @@ public class Bank_ImpDAO implements BankInterfaceDAO {
 					System.out.println("Enter new pin to upadate");
 					int newpin = sc.nextInt();
 					ref.setPin(newpin);
+					
 					return validate(ref);
 				}
 				
@@ -109,13 +110,14 @@ public class Bank_ImpDAO implements BankInterfaceDAO {
 	@Override //validating/verifying a pin
 	public boolean validate(BankAccDTO ref) {
 		
-//		boolean status=false;
+		boolean status=false;
 		int count=3;
 		while(count>0){
 			System.out.println("enter the pin");
 			int pin=sc.nextInt();
 			if(pin == ref.getPin()) {
-				return true;
+				status= true;
+				break;
 			}
 			else {
 				try {
@@ -125,10 +127,9 @@ public class Bank_ImpDAO implements BankInterfaceDAO {
 				catch(InvaildPinException e) {
 					System.out.println(e.getMessage());
 				}
-				
 			}
 		}
-		return false;
+		return status;
 	}
 
 	@Override // options given to choose
